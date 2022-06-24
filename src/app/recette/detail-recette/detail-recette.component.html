@@ -1,0 +1,22 @@
+<div class="container">
+    <div *ngIf="recette">
+        <h1>{{ recette.recette_titre }}</h1>
+        <label>Description :</label>
+        <p>{{ recette.recette_description }}</p>
+        <span>Durée totale : {{ recette.recette_duration }} {{ recette.recette_duration_format }}</span>
+        <ul class="list-group">
+            <li class="list-group-item active h3">Etapes</li>
+            <li class="list-group-item" *ngFor="let etape of recette.recette_etapes">
+                
+                <div class="d-flex justify-content-between align-center">
+                    <div class="border-right">
+                        <h4>{{ etape.etape_num }}</h4>
+                    </div>
+                    
+                    <p class="ms-2">{{ etape.etape_description }}</p>
+                    <span class="ms-auto">{{ etape.etape_duration }} {{ etape.etape_format }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
