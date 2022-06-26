@@ -5,6 +5,7 @@ import { ListRecetteComponent } from './list-recette/list-recette.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DetailRecetteComponent } from './detail-recette/detail-recette.component';
 import { RecetteService } from './recetteService.service';
+import { FormsModule } from '@angular/forms';
 
 const routesRecette: Routes = [
   { path: 'recette/:id', component: DetailRecetteComponent },
@@ -19,6 +20,7 @@ const routesRecette: Routes = [
   imports: [
     CommonModule,
     NgbModule,
+    FormsModule,
     RouterModule.forRoot(routesRecette)
   ],
   providers: [RecetteService]

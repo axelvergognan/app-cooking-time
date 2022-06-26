@@ -14,6 +14,7 @@ export class ListRecetteComponent implements OnInit {
 
   recetteList: Recette[] = [];
   rate: any;
+  isChecked: boolean = false;
 
   constructor(config: NgbRatingConfig, private router: Router, private recetteService: RecetteService) { 
     config.max = 5;
@@ -26,6 +27,10 @@ export class ListRecetteComponent implements OnInit {
 
   goToRecette(recette: Recette){
     this.router.navigate(['/recette', recette.recette_id]);
+  }
+
+  checkValue(event: any, categorie: number){
+    
   }
 
 }
